@@ -1,10 +1,11 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   Text,
   View,
   Image,
   TouchableOpacity,
   StyleSheet,
+  Pressable,
 } from 'react-native';
 
 import DiceOne from './assets/dice1.png';
@@ -16,15 +17,37 @@ import DiceSix from './assets/dice6.png';
 
 
 const App = () => {
+
+  let img =[
+    0,
+    DiceOne,
+    DiceTwo,  
+    DiceThree,
+    DiceFour,
+    DiceFive,
+    DiceSix
+  ]; 
   
-  const uri = DiceFive;
+  const [uri1, setUri1] = useState(DiceOne);
+  const [uri2, setUri2] = useState(DiceThree);
+
+
+  const playButtonTapped = () => {
+    let randomNumber1 = Math.floor(Math.random() * 6) + 1;
+    let randomNumber2 = Math.floor(Math.random() * 6) + 1;
+    setUri1(img[randomNumber1]);
+    setUri2(img[randomNumber2]);
+  }
+
+  
 
   return(
       <>
         <View style={styles.container}>
-          <Image style={styles.image} source={uri}/>
-          <TouchableOpacity>
-            <Text style={styles.playGameButton}>Play Game</Text>
+          <Image style={styles.image} source={uri1}/>
+          <Image style={styles.image} source={uri2}/>
+          <TouchableOpacity onPress={playButtonTapped}>
+            <Text style={styles.playGameButton}>Roll Dice</Text>
           </TouchableOpacity>
         </View>
           

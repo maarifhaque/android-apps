@@ -3,12 +3,12 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 
 platform :ios, '10.0'
 
-target 'diceRoller' do
+target 'DiceRoller' do
   config = use_native_modules!
 
   use_react_native!(:path => config["reactNativePath"])
 
-  target 'diceRollerTests' do
+  target 'DiceRollerTests' do
     inherit! :complete
     # Pods for testing
   end
@@ -23,10 +23,10 @@ target 'diceRoller' do
   end
 end
 
-target 'diceRoller-tvOS' do
-  # Pods for diceRoller-tvOS
+target 'DiceRoller-tvOS' do
+  # Pods for DiceRoller-tvOS
 
-  target 'diceRoller-tvOSTests' do
+  target 'DiceRoller-tvOSTests' do
     inherit! :search_paths
     # Pods for testing
   end

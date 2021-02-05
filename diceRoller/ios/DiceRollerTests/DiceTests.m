@@ -7,11 +7,11 @@
 #define TIMEOUT_SECONDS 600
 #define TEXT_TO_LOOK_FOR @"Welcome to React"
 
-@interface diceRollerTests : XCTestCase
+@interface DiceTests : XCTestCase
 
 @end
 
-@implementation diceRollerTests
+@implementation DiceTests
 
 - (BOOL)findSubviewInView:(UIView *)view matching:(BOOL(^)(UIView *view))test
 {
